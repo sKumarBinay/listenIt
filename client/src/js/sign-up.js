@@ -1,12 +1,12 @@
 
 // Make sure sw are supported
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register('/sw')
-            .catch(err => console.log(`Service Worker: Error: ${err}`))
-    })
-}
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', () => {
+//         navigator.serviceWorker
+//             .register('/sw')
+//             .catch(err => console.log(`Service Worker: Error: ${err}`))
+//     })
+// }
 
 window.binay = window.binay || {}
 window.binay.listenIt = window.binay.listenIt || {}
