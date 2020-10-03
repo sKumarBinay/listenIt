@@ -1,0 +1,281 @@
+html, body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #242424 !important;
+  color: #e3e3e3 !important;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif; }
+
+  .d-none {
+    display: none !important;
+  }
+
+  .install-prompt-wrapper {
+    height: 100%;
+    width: 100vw;
+    background-color: #373535d6;
+    z-index: 3000;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  .install-prompt-wrapper .prompt {
+    height: 180px;
+    width: calc(100vw - 30px);
+    max-width: 400px;
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ffffff4d
+}
+
+.install-prompt-wrapper .prompt .promp-head {
+  height: 42px;
+  background-color: #4a4a4a;
+  display: flex;
+  align-items: center;
+}
+
+.install-prompt-wrapper .prompt .promp-head img {
+  background-color: #e3e3e3;
+  height: 20px;
+  padding: 6px;
+  border-radius: 9px;
+  margin: 4px 10px;
+}
+
+.install-prompt-wrapper .prompt .promp-body {
+  padding: 0 15px;
+}
+
+.install-prompt-wrapper .prompt .promp-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.install-prompt-wrapper .prompt .promp-footer button:first-of-type {
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  margin-right: 10px;
+  background-color: #141414;
+  color: white;
+  border: none;
+}
+
+.install-prompt-wrapper .prompt .promp-footer button:nth-of-type(2) {
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  margin-right: 10px;
+  background-color: #60033d;
+  color: white;
+  border: none;
+}
+
+.wrapper {
+  display: flex;
+  padding: 30px;
+  color: #e3e3e3;
+  flex-direction: column;
+}
+  .wrapper .img-wrapper {
+    height: 100%;
+    width: 30%;
+    background-color: black; }
+    .wrapper .img-wrapper img {
+      width: 100%;
+      background-color: black;
+      border-radius: 50%;
+      margin-left: 45%;
+      margin-top: 24%; }
+  .wrapper .form-wrappper {
+    height: 100%;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .wrapper .form-wrappper .welcome {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      font-size: larger;
+      color: #be1a1a; }
+      .wrapper .form-wrappper .welcome h3 {
+        margin: 27% 0 0 10%; }
+    .wrapper .form-wrappper .form {
+      padding: 10px;
+      display: flex;
+      justify-content: center; }
+      .wrapper .form-wrappper .form form input {
+        margin-top: 6px;
+        margin-bottom: 8px;
+        padding: 7px;
+        font-size: 0.8rem;
+        width: 180px;
+        padding-left: 12px;
+        border-radius: 12px; }
+        .wrapper .form-wrappper .form form input[type="button"] {
+          width: 70px;
+          float: right;
+          border-radius: 4px;
+          margin-top: 0;
+          background-color: green;
+          color: white;
+          border: none; }
+        .wrapper .form-wrappper .form form input:focus, .wrapper .form-wrappper .form form input:active {
+          outline: none; }
+    .wrapper .form-wrappper .sign-up-btn {
+      border-top-right-radius: 54px;
+      border-bottom-right-radius: 56px;
+      display: inline-flex;
+      justify-content: flex-end; }
+      .wrapper .form-wrappper .sign-up-btn button {
+        margin-bottom: 10%;
+        padding: 8px;
+        border-radius: 6px;
+        box-shadow: none;
+        background-color: green;
+        border-style: none;
+        color: white;
+        margin-right: 10%; }
+
+        input[type="button"]:disabled {
+          opacity: 0.5;
+        }
+
+    .user-profile {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: #242424;
+      color: #e3e3e3;
+      padding: 30px;
+      z-index: 10;
+    }
+
+    .user-profile select, .user-profile input {
+      background-color: #141414;
+      padding: 6px;
+      border-radius: 4px;
+      color: #e3e3e3;
+      width: 100%;
+    }
+
+    label {
+      margin-top: 20px;
+      display: block;
+    }
+
+    .book-list {
+      margin-top: 20px;
+      height: 100px;
+      padding: 20px 0;
+      width: max-content;
+    }
+
+    .book {
+      display: inline-block;
+      height: 90px;
+      width: 90px;
+      padding: 6px;
+      margin-right: 10px;
+      background-color: black;
+      color: #e3e3e3;
+      border-radius: 12px;
+    }
+
+    button.profile-close,  button.profile-open{
+      color: #e3e3e3;
+      background-color: black;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+  }
+
+  .watermark {
+    height: 50vh;
+    opacity: 0.3;
+    position: absolute;
+    top: 25vh;
+  }
+.wrapper input {
+  background-color: black;
+      padding: 6px;
+      border-radius: 4px;
+      color: #e3e3e3;
+      width: 100%;
+      z-index: 1;
+      border: none;
+}
+
+.wrapper label {
+  margin-top: 5px;
+}
+
+.image-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-height: 48vh;
+}
+
+.image {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  margin: 10px;
+  position: relative;
+  border-radius: 10px;
+  font-size: 0.1rem;
+  padding: 6px;
+}
+
+.image .page-count {
+  position: absolute;
+  background: green;
+  right: -9px;
+  top: -9px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  line-height: 1;
+  font-size: 0.75rem;
+}
+
+.all-done {
+  right: 30px;
+  position: absolute;
+  bottom: 18px;
+  padding: 10px;
+  background: #074402;
+  color: #e3e3e3;
+  border: none;
+  border-radius: 6px;
+}
+
+.notification {
+  background-color: #167b16eb;
+  position: absolute;
+  top: 43%;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in;
+  transform: scale(0);
+  transform-origin: left;
+}
+
+.notification.show {
+  transform: scale(1);
+}

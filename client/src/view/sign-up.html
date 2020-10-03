@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/sign-up.css">
+    <link rel="manifest" href="manifest">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1 style="margin-top:0">Listen it</h1>
+
+        <button class="profile-open">=</button>
+        <img src="assets/audiobook512.png" class="watermark">
+        <label for="book-name">Name your audiobook</label></br>
+        <input type="text" id="book-name"></br>
+        <label for="file">Select an image</label></br>
+        <input type="file" name="scan" id="file"></br>
+        <div class="image-list"></div>
+        <button class="all-done">All pages done!</button>
+    </div>
+    
+    <div class="user-profile d-none">
+        <div>My audiobooks</div>
+        <div style="overflow-x: auto;">
+            <div class="book-list">
+            </div>
+        </div>
+        <div>
+            <label for="voice">Select voice</label></br>
+            <select id="voice"></select></br>
+            <label for="rate">Select rate of speech</label></br>
+            <input type="text" id="rate" value="1"></br>
+            <label for="pitch">Select pitch of speech</label></br>
+            <input type="text" id="pitch" value="1"></br>
+            <!-- <textarea name="" id="" cols="30" rows="10" class="txt"></textarea></br> -->
+            <button class="profile-close">X</button>
+        </div>
+    </div>
+
+    <div class="install-prompt-wrapper d-none">
+        <div class="prompt">
+            <div class="promp-head">
+                <img src="assets/audiobook192.png"> Image to audiobook
+            </div>
+            <div class="promp-body">Do you want to install the app</div>
+            <div class="promp-footer">
+                <button class="no">No</button>
+                <button class="yes">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification">Compiling...</div>
+<script src="js/sign-up.js"></script>
+</body>
+
+</html>
