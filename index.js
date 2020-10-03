@@ -5,7 +5,6 @@ const cors = require('cors')
 const multer = require('multer')
 const path = require('path')
 const fs = require('fs')
-// const favicon = require('serve-favicon')
 const Tesseract = require('tesseract.js');
 
 
@@ -15,7 +14,6 @@ app.use(cors())
 app.use(bodyParser.urlencoded( {extended: true }))
 app.use(bodyParser.json())
 
-// app.use(favicon(path.join(__dirname + '/favicon.ico')))
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
