@@ -1,6 +1,6 @@
 {
-    "name": "Image to audiobook",
-    "short_name": "Image to audiobook",
+    "name": "Listen it",
+    "short_name": "ListenIT",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#000000",
