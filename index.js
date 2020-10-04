@@ -45,7 +45,7 @@ app.use('/js', express.static(__dirname + '/client/src/js/'))
 app.use('/manifest', express.static(__dirname + '/client/manifest.json'))
 app.use('/sw', express.static(__dirname + '/service-worker.js'))
 app.use('/uploads', express.static(__dirname + '/uploads/'))
-app.use('/favicon', express.static(__dirname + '/favicon.ico'))
+app.use('/favicon.ico', express.static(__dirname + '/favicon.ico'))
 
 
 // sign up page
