@@ -279,3 +279,9 @@ body {
 .notification.show {
   transform: scale(1);
 }
+
+.partial-string {
+  height: 50px;
+  overflow: hidden;
+  display: inline-block;
+}

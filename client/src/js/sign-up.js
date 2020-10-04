@@ -1,3 +1,4 @@
+// import { imageCompression } from '/js/compress-img.js'
 
 // Make sure sw are supported
 if ('serviceWorker' in navigator) {
@@ -44,7 +45,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     localStorage.setItem('listenIt.appInstalled', 'false')
     prompt.classList.remove('d-none')
     e.preventDefault()
-    deferredPrompt = e
+    const deferredPrompt = e
     y.addEventListener('click', () => {
         prompt.classList.add('d-none')
         deferredPrompt.prompt()
@@ -60,8 +61,13 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 file.addEventListener('change', (e) => {
     toggleNotification(true)
+    compressImg(e.target.files[0])
+})
+
+
+function fileUpload (compressedImg) {
     const data = new FormData()
-    data.append('scan', e.target.files[0])
+    data.append('scan', compressedImg)
     fetch('/upload',
         {
             method: 'POST',
@@ -80,7 +86,27 @@ file.addEventListener('change', (e) => {
             appendPage(pageNo, res)
             toggleNotification(false)
         })
-})
+}
+
+function compressImg (imageFile) {
+  console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+  console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+ 
+  const options = {
+    maxSizeMB: 0.009,
+    maxWidthOrHeight: 1080
+  }
+  imageCompression(imageFile, options)
+    .then(function (compressedFile) {
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+ 
+      fileUpload(compressedFile)
+    })
+    .catch(function (error) {
+      console.log(error.message);
+    });
+}
 
 function appendPage(pageNo, content) {
     const div = document.createElement('div')
@@ -99,7 +125,7 @@ function openPreview() {
 function populateVoiceList() {
     voices = synth.getVoices();
 
-    for (i = 0; i < voices.length; i++) {
+    for (let i = 0; i < voices.length; i++) {
         const option = document.createElement('option');
         option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
 
@@ -194,7 +220,7 @@ function onOpenProfile () {
 function onPlay (content) {
     const utterThis = new SpeechSynthesisUtterance(content);
     const selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
-    for(i = 0; i < voices.length ; i++) {
+    for(let i = 0; i < voices.length ; i++) {
       if(voices[i].name === selectedOption) {
         utterThis.voice = voices[i];
       }
